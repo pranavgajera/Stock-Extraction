@@ -1,6 +1,3 @@
-# CS288 Homework 8
-# Read the skeleton code carefully and try to follow the structure
-# You may modify the code but try to stay within the framework.
 
 import sys
 import os
@@ -19,8 +16,7 @@ from xml.parsers import expat
 def get_elms_for_atr_val(tag,atr,val):
    lst=[]
    lst = dom.getElementsByTagName(tag)
-   # 
-   # ............
+  
 
    return lst
 
@@ -49,7 +45,6 @@ def replace_non_alpha_numeric(s):
    return new.strip()
 
 # convert to xhtml
-# use: java -jar tagsoup-1.2.jar --files html_file
 def html_to_xml(fn):
    p1=subprocess.call(['java','-jar','tagsoup-1.2.1.jar','--files',fn])
    xhtml_file=fn.replace('.html','.xhtml')
@@ -96,7 +91,6 @@ def tr_to_dict(x,n):
    for j in range(0,xn-2):
       dict[x[j]]=n[j]
    return dict
-# mysql> describe most_active;
 
 def insert_to_db(l,tbl):
    lst=[]
@@ -121,7 +115,6 @@ def main():
    
    cursor.execute(s)
    
-   # make sure your mysql server is up and running
    l = insert_to_db(lst,table)
    i=0 # fn = table name for mysql
    for x in l:
@@ -137,4 +130,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-# end of hw7.py
